@@ -1,2 +1,2 @@
 Called as such:
-` [[getsvg? &id=``...`` &classes=``...``]] `
+`` [[getsvg? &id=`...` &classes=`...`]] ``
