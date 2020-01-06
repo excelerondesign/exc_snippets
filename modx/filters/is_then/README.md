@@ -1,4 +1,4 @@
-[ ] output nothing when logic doesnt pass
+[ ] output nothing when logic doesn't pass
 example
 
 ```html
