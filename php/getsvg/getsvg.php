@@ -1,7 +1,6 @@
 <?php
-if ($input === '') {
-    return 'No Input';
-}
+if (!$input) return 'No Input';
+
 // create a random 5 char string
 $rand = hash('ripemd160', rand(1, 100));
 $rand = substr($rand, 5, 5);
