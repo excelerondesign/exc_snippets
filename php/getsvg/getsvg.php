@@ -42,6 +42,6 @@ if ($isSvgMime || $isSvgContent || $isSvgEl) {
     $output = $svg;
 } else {
     // otherwise just return the string below
-    $output = "Not an SVG.";
+    $output = "Not an SVG: {$input}";
 }
 return $output;
