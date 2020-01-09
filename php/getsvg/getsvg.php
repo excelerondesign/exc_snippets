@@ -1,4 +1,6 @@
 <?php
+if (!$input) return 'No Input';
+
 // create a random 5 char string
 $rand = hash('ripemd160', rand(1, 100));
 $rand = substr($rand, 5, 5);
@@ -6,6 +8,7 @@ $rand = substr($rand, 5, 5);
 // get script properties
 $id = $modx->getOption('id', $scriptProperties, "svg_{$rand}");
 $classes = $modx->getOption('classes', $scriptProperties, 'svg svg--replaced');
+$debug = $modx->getOption('debug', $scriptProperties, false);
 
 // get file contents
 $svg = file_get_contents($input);
@@ -20,7 +23,7 @@ $isSvgContent = preg_match('/xmlns="http:\/\/www.w3.org\/2000\/svg"/', $svg, $ou
 $isSvgEl = preg_match('/<svg.*\/svg>/', $svg, $output_array);
 
 $hasID = preg_match('/ id=/', $svg, $output_array);
-
+// $modx->log(modX::LOG_LEVEL_ERROR, );
 // Tests logic above
 if ($isSvgMime || $isSvgContent || $isSvgEl) {
 
@@ -42,6 +45,6 @@ if ($isSvgMime || $isSvgContent || $isSvgEl) {
     $output = $svg;
 } else {
     // otherwise just return the string below
-    $output = "Not an SVG.";
+    $output = "Not an SVG: {$input}";
 }
 return $output;
