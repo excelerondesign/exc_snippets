@@ -66,27 +66,45 @@ function changeVisibilityForTargets({
 		return targets.forEach(target => changeVisibility(target, true));
 
 	/* check if we're still developing the website */
-	DEV_ENV && console.error('Value did not match expected: ', [...targets]);
 
 	return;
 }
-
+/*
 function changeVisibility(target, shouldBeHidden) {
 	console.log(shouldBeHidden);
-	/* option for manual control */
 	if (shouldBeHidden !== undefined)
 		return target.setAttribute('hidden', shouldBeHidden);
 
-	/* Otherwise, toggle hidden attribute */
 	return !target.hidden ? (target.hidden = true) : (target.hidden = false);
 }
-
+*/
 applyControllers(controls);
 
-function controlHidden() {
-	this.DEFAULTS = {
-		class_prefix: 'js-hide_',
-		input_suffix: 'input',
-		conditional_suffix: 'conditional'
-	};
+class controlHidden {
+    /**
+     * optional config object to pass in
+     * @param {Object} options 
+     */
+	constructor(options) {
+		this.DEFAULTS = {
+			class_prefix: 'js-hide_',
+			input_suffix: 'input',
+			conditional_suffix: 'conditional',
+			debug: true
+		};
+		const CONFIG = Object.assign(this.DEFAULTS, options);
+	}
+
+	changeVisibility(target, shouldBeHidden) {
+		/* option for manual control */
+		if (shouldBeHidden !== undefined)
+			return target.setAttribute('hidden', shouldBeHidden);
+
+		/* Otherwise, toggle hidden attribute */
+		return !target.hidden
+			? (target.hidden = true)
+			: (target.hidden = false);
+	}
+
+	applyControllers() {}
 }
