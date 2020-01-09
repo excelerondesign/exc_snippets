@@ -81,10 +81,10 @@ function changeVisibility(target, shouldBeHidden) {
 applyControllers(controls);
 
 class controlHidden {
-    /**
-     * optional config object to pass in
-     * @param {Object} options 
-     */
+	/**
+	 * optional config object to pass in
+	 * @param {Object} options
+	 */
 	constructor(options) {
 		this.DEFAULTS = {
 			class_prefix: 'js-hide_',
@@ -92,7 +92,7 @@ class controlHidden {
 			conditional_suffix: 'conditional',
 			debug: true
 		};
-		const CONFIG = Object.assign(this.DEFAULTS, options);
+		CONFIG = Object.assign(this.DEFAULTS, options);
 	}
 
 	changeVisibility(target, shouldBeHidden) {
@@ -107,4 +107,36 @@ class controlHidden {
 	}
 
 	applyControllers() {}
+	changeVisibilityForTargets(controllerConfig) {
+		const {
+			targets,
+			controller: { value },
+			expects
+		} = controllerConfig;
+		/*?
+		 * if there is no expected value
+		 * or
+		 * if the current value is the same as the expected value
+		 *
+		 * then change the visibility of all the targets
+		 */
+
+		if (expects === undefined || value === expects) {
+			return targets.forEach(target => this.changeVisibility(target));
+		}
+
+		/*?
+		 * else if the value is not the same as expected value
+		 *
+		 * hide all targets
+		 */
+		if (value !== expects)
+			return targets.forEach(target =>
+				this.changeVisibility(target, true)
+			);
+
+		/*? check if we're still developing the website */
+
+		return;
+	}
 }
