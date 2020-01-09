@@ -85,7 +85,7 @@ class controlHidden {
 		/**
 		 * CONFIG
 		 * @param debug turn on or off errors
-		 * @param css if true, css styles will default to plugin else ignored
+		 * @param css if true, css styles will default to plugin else ignored, false assumes you have your own
 		 * @param prefix use a custom class prefix
 		 * * This plugin takes advantage of separate suffixes for separate uses
 		 * * input_suffix is aimed at inputs that control parts of the page but will not be seen
@@ -108,8 +108,19 @@ class controlHidden {
 	addCSS() {
 		const el = document.createElement('style');
 		el.innerText = `
-        
+        ${this.CONFIG.prefix + this.CONFIG.input_suffix} {
+            position: absolute;
+            overflow: hidden;
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+            padding: 0;
+            border: 0;
+            clip: rect(1px 1px 1px 1px);
+            clip: rect(1px, 1px, 1px, 1px);
+        }
         `;
+		return document.head.appendChild(el);
 	}
 
 	byClass(str) {
@@ -122,7 +133,7 @@ class controlHidden {
 			return target.setAttribute('hidden', shouldBeHidden);
 
 		/* Otherwise, toggle hidden attribute */
-		return !target.hidden
+		return !target.getAttribute('hidden')
 			? target.setAttribute('hidden', true)
 			: target.setAttribute('hidden', false);
 	}
