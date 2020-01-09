@@ -8,7 +8,8 @@
         -   `.js-hide_SECTIONNAME` + `< hidden >` attribute
 -   [ ] Give examples
     -   Can you do working HTML and JS in GitHub Markdown?
-    -   Possibly link to documentation [:link: :book:](https://dev.excelerondesigns.com) instead
+    -   Possibly link to documentation [:link: :book:](https://dev.excelerondesigns.com) instead.
+        -   See: [:white_check_mark:](https://github.com/excelerondesign/documentation/projects/1#card-31430826)
 
 ### EXAMPLES:
 
