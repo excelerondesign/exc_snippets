@@ -35,10 +35,12 @@ class controlHidden {
 		this.CONFIG = Object.assign(this.DEFAULTS, options);
 
 		//* Generates an array of DOM Elements from the given arrays
-		this.controls = [...this.CONFIG.inputs, ...this.CONFIG.conditionals];
+		this.controllers = [...this.CONFIG.inputs, ...this.CONFIG.conditionals];
 
 		//* Checks to see if styles need to be added
 		this.CONFIG.css && this.addCSS();
+
+		this.applyControllers(this.controllers);
 	}
 
 	addCSS() {
