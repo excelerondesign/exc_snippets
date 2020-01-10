@@ -1,7 +1,8 @@
 ## Extrapolate once list is completed
 
-#### ctrlVIZ :see_no_evil:
+#### obstructor.js :see_no_evil:
 
+-   [ ] change necessary names to match new name `obstructor`
 -   [ ] Write up proper documentation about how to build elements
     -   hide sections with the `hidden` attribute
     -   `data-*` and class options
