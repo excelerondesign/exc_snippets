@@ -7,7 +7,7 @@ $rand = substr($rand, 5, 5);
 
 // get script properties
 $id = $modx->getOption('id', $scriptProperties, "svg_{$rand}");
-$classes = $modx->getOption('classes', $scriptProperties, 'svg svg--replaced');
+$classes = $modx->getOption('classes', $scriptProperties, '');
 $debug = $modx->getOption('debug', $scriptProperties, false);
 
 // get file contents
@@ -39,7 +39,7 @@ if ($isSvgMime || $isSvgContent || $isSvgEl) {
     } else {
         $svg = preg_replace("/>/", "id='{$id}'>", $svg, 1);
     }
-    $svg = preg_replace("/>/", " class='{$classes}'>", $svg, 1);
+    $svg = preg_replace("/>/", " class='svg svg--replaced {$classes}'>", $svg, 1);
 
     // return it to the page
     $output = $svg;
