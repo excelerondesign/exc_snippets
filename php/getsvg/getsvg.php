@@ -39,6 +39,9 @@ if ($isSvgMime || $isSvgContent || $isSvgEl) {
     } else {
         $svg = preg_replace("/>/", "id='{$id}'>", $svg, 1);
     }
+    if ($hasAlt) {
+        $svg = preg_replace("/>", "aria-label='{addslashes($alt)}'");
+    }
     $svg = preg_replace("/>/", " class='svg svg--replaced {$classes}'>", $svg, 1);
 
     // return it to the page
