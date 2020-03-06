@@ -3,6 +3,9 @@ Called as such:
 
 > Created in collaboration by: [Connor](https://github.com/frankie-tech) & [Ryan B](https://github.com/4rch1m3d35)
 
+```php
+[[!getsvg? &id=`uniqueID` &classes=`class-names separated-by spaces`]]
+```
 
 ###### Ideas
 - [ ] Debug mode
