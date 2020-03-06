@@ -9,7 +9,7 @@ $rand = substr($rand, 5, 5);
 $id = $modx->getOption('id', $scriptProperties, "svg_{$rand}");
 $classes = $modx->getOption('classes', $scriptProperties, '');
 $debug = $modx->getOption('debug', $scriptProperties, false);
-
+$alt = $modx->getOption('alt', $scriptProperties, '');
 // get file contents
 $svg = file_get_contents($input);
 
