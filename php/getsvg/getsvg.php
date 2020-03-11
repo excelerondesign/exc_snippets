@@ -9,7 +9,7 @@ $rand = substr($rand, 5, 5);
 $id = $modx->getOption('id', $scriptProperties, "svg_{$rand}");
 $classes = $modx->getOption('classes', $scriptProperties, '');
 $debug = $modx->getOption('debug', $scriptProperties, false);
-
+$alt = $modx->getOption('alt', $scriptProperties, '');
 // get file contents
 $svg = file_get_contents($input);
 
@@ -38,6 +38,9 @@ if ($isSvgMime || $isSvgContent || $isSvgEl) {
         $svg = preg_replace("/id=\"(?:(?!\").)*?\"/", "id='{$id}'", $svg, 1);
     } else {
         $svg = preg_replace("/>/", "id='{$id}'>", $svg, 1);
+    }
+    if ($hasAlt) {
+        $svg = preg_replace("/>", "aria-label='{addslashes($alt)}'");
     }
     $svg = preg_replace("/>/", " class='svg svg--replaced {$classes}'>", $svg, 1);
 
