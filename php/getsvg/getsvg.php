@@ -1,11 +1,4 @@
 <?php
-if (!function_exists('assign_attr')) {
-    function assign_attr($el, $attr, $val)
-    {
-        $el->setAttribute($attr, $val);
-    }
-}
-
 $input = $modx->getOption('input', $scriptProperties, '');
 $title = $modx->getOption('title', $scriptProperties, '');
 $label = $modx->getOption('label', $scriptProperties, '');
@@ -26,13 +19,13 @@ if (!$doc->Load($input)) return "Not a valid XML document";
 $tag = $doc->getElementsByTagName('svg')->item(0);
 
 if (!empty($label)) {
-    assign_attr($tag, 'aria-label', $label);
+    $tag->setAttribute('aria-label', $label);
 } else {
-    assign_attr($tag, 'aria-hidden', 'true');
+    $tag->setAttribute('aria-hidden', 'true');
 }
 
-assign_attr($tag, 'id', $id);
-assign_attr($tag, 'role', 'image');
-assign_attr($tag, 'class', $classNames);
+$tag->setAttribute('id', $id);
+$tag->setAttribute('role', 'image');
+$tag->setAttribute('class', $classNames);
 
 return $doc->saveXML();
