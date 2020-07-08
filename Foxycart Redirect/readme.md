@@ -1,3 +1,4 @@
+```
 [[!FormIt?
 &hooks=`foxycart_redirect`
 &hidden_values=`` // values you want to have in foxycart session 
@@ -7,3 +8,4 @@
 &empty=`` // boolean value
 &foxycart_debug=`` // boolen value defaults to false
 ]]
+```
