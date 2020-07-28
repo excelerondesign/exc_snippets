@@ -1,0 +1,64 @@
+.compatibility-popup {
+	visibility: hidden;
+	display: none;
+	position: relative;
+}
+.compatibility-popup-visible {
+	display: block;
+	visibility: visible;
+}
+.compatibility-popup > .compatibility-message {
+	background-color: #fff;
+	max-width: 45vw;
+	margin: 0 auto;
+	width: 100%;
+	padding: 1rem 1.5rem 1rem;
+	position: relative;
+	z-index: 10;
+	border-radius: 10px;
+	display: block;
+}
+.compatibility-message > .compatibility-title {
+	font-size: 2.5rem;
+	font-weight: 100;
+	word-spacing: -1px;
+}
+.compatibility-message > .compatibility-subtitle {
+	font-size: 1.25rem;
+	font-weight: 400;
+	letter-spacing: -0.5px;
+}
+.compatibility-message a {
+	text-decoration: underline dashed;
+	color: #0d6efd;
+}
+.compatibility-message a:hover {
+	text-decoration: unset;
+	color: #024dbc;
+}
+.compatibility-message a:visited {
+	text-decoration: underline dashed;
+	color: #024dbc;
+}
+.compatibility-message a:visited:hover {
+	color: #0d6efd;
+}
+.compatibility-message a:focus {
+	outline: 2px dashed #0d6efd;
+	text-decoration: unset;
+	color: #0d6efd;
+}
+.compatibility-message a:visited:focus {
+	color: #024dbc;
+}
+.compatibility-popup > .compatibility-backdrop {
+	margin-top: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.3);
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
