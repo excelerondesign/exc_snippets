@@ -24,7 +24,8 @@ Copy and past the code below just below the opening of your `body`, and you're a
 				href="https://www.microsoft.com/en-us/edge"
 				rel="noreferrer noopener"
 				target="_blank"
-				>Edge</a
+			>
+				Edge</a
 			>,
 			<a
 				href="https://www.mozilla.org/en-US/firefox/new/"
