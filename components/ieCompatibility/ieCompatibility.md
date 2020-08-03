@@ -121,4 +121,4 @@ Copy and past the code below just below the opening of your `body`, and you're a
 
 ## Explanation
 
-The plugin checks for the existence of the property `document.documentMode`. This emits the mode that Internet Explorer is using to interpret the document. It was implemented in version 8 of Internet Explorer and was removed in Edge.
+The plugin checks for the existence of the property `document.documentMode`. This emits the mode that Internet Explorer is using to interpret the document. It was implemented in version 8 of Internet Explorer and was removed in Edge. All CSS and JS was designed to be as compatible as possible, any incompatibilities found should be added to the issues tab on GitHub.
