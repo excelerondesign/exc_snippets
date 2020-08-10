@@ -1,5 +1,4 @@
 <?php
-
 /*!
  * MODX Foxycart Redirect FormIt Hook
  * (c) 2020 Exceleron Designs, MIT License, https://excelerondesigns.com
@@ -7,7 +6,6 @@
  */
 
 $value_array = $_POST;
-
 
 if(empty($foxycart_subdomain)){
     $modx->log(modX::LOG_LEVEL_ERROR, "Must include subdomain \'subdomain.foxycart.com\'.");
@@ -42,6 +40,7 @@ foreach($value_array as $key => $value){
 
 if($foxycart_debug) {
     $modx->log(modX::LOG_LEVEL_ERROR, 'Base URL: ' . $url);
+    $modx->log(modX::LOG_LEVEL_ERROR, 'Values: ' . print_r($value_array, true));
     $modx->log(modX::LOG_LEVEL_ERROR, 'Parameter Values: ' . print_r($parameter_array, true));
 }
 
