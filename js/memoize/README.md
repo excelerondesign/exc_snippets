@@ -1,4 +1,4 @@
-# Memoize
+# Memoize _may be out of date_
 
 A small script to help memoize more complex function that give unique outputs for each input.
 
